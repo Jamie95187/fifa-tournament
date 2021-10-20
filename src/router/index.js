@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
-import Tournaments from '../views/Tournaments.vue'
-import Players from '../views/Players.vue'
+import Tournaments from '../views/tournaments/Tournaments.vue'
+import Players from '../views/players/Players.vue'
 
 const routes = [
   {
