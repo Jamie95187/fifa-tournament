@@ -3,6 +3,8 @@ import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Tournaments from '../views/tournaments/Tournaments.vue'
 import Players from '../views/players/Players.vue'
+import PlayerDetails from '../views/players/PlayerDetails.vue'
+
 
 const routes = [
   {
@@ -24,6 +26,11 @@ const routes = [
     path: '/Players',
     name: 'Players',
     component: Players
+  },
+  {
+    path: '/Players/:id',
+    name: 'PlayerDetails',
+    component: PlayerDetails
   }
 ]
 
