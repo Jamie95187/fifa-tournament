@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
+import NotFound from '../views/NotFound.vue'
 import Tournaments from '../views/tournaments/Tournaments.vue'
 import Players from '../views/players/Players.vue'
 import PlayerDetails from '../views/players/PlayerDetails.vue'
@@ -32,6 +33,12 @@ const routes = [
     name: 'PlayerDetails',
     component: PlayerDetails,
     props: true
+  },
+  // catchall 404
+  {
+    path: '/:catchAll(.*)',
+    name: 'NotFound',
+    component: NotFound
   }
 ]
 
