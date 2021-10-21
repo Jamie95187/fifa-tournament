@@ -1,7 +1,12 @@
 <template>
   <h1>This is the players page</h1>
   <div v-for="player in players" :key="player.id" class="player">
-    <router-link :to="{ name: 'PlayerDetails', params: { id: player.id } }">
+    <router-link
+      :to="{
+        name: 'PlayerDetails',
+        params: { name: player.name, id: player.id },
+      }"
+    >
       <h2>{{ player.name }}</h2>
     </router-link>
   </div>

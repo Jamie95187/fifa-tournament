@@ -1,11 +1,11 @@
 <template>
   <h1>Player Details Page</h1>
-  <p>The player id is {{ id }}</p>
+  <p>This is {{ name }} with id {{ id }}</p>
 </template>
 
 <script>
 export default {
-  props: ["id"],
+  props: ["name", "id"],
 };
 </script>
 
