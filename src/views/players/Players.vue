@@ -1,10 +1,10 @@
 <template>
   <h1>This is the players page</h1>
-  <div v-for="player in players" :key="player.id" class="player">
+  <div v-for="player in Players" :key="player.key" class="player">
     <router-link
       :to="{
         name: 'PlayerDetails',
-        params: { name: player.name, id: player.id },
+        params: { name: player.name, id: player.key },
       }"
     >
       <h2>{{ player.name }}</h2>
@@ -13,15 +13,28 @@
 </template>
 
 <script>
+import { db } from "../../firebase";
+
 export default {
   data() {
     return {
-      players: [
-        { name: "Player 1", id: 1 },
-        { name: "Player 2", id: 2 },
-        { name: "Player 3", id: 3 },
+      Players: [
+        // { name: "Player 1", id: 1 },
+        // { name: "Player 2", id: 2 },
+        // { name: "Player 3", id: 3 },
       ],
     };
+  },
+  created() {
+    db.collection("players").onSnapshot((snapshotChange) => {
+      this.Players = [];
+      snapshotChange.forEach((doc) => {
+        this.Players.push({
+          key: doc.id,
+          name: doc.data().name,
+        });
+      });
+    });
   },
 };
 </script>
