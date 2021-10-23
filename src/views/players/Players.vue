@@ -2,7 +2,12 @@
   <h1>This is the players page</h1>
   <Modal @close="toggleModal" :modalActive="modalActive">
     <div class="modal-content">
-      <h1>This is a Modal Header</h1>
+      <input
+        class="player-name-input"
+        v-model="nameInput"
+        placeholder="Name"
+        required
+      />
     </div>
   </Modal>
   <button @click="toggleModal" type="button">Open Modal</button>
@@ -79,5 +84,16 @@ export default {
 }
 .player a {
   text-decoration: none;
+}
+.input {
+  text-align: left;
+}
+.player-name-input {
+  text-align: left;
+  padding: 24px 150px;
+  box-sizing: border-box;
+  border: rgb(235, 195, 88);
+  border-radius: 4px;
+  font-size: 24px;
 }
 </style>

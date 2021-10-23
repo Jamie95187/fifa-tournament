@@ -53,7 +53,8 @@ i {
   cursor: pointer;
 }
 .confirmButton {
-  margin-right: 10px;
-  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-right: 15px;
+  margin-bottom: 20px;
 }
 </style>
