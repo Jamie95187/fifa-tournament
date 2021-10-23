@@ -1,5 +1,11 @@
 <template>
   <h1>This is the players page</h1>
+  <Modal @close="toggleModal" :modalActive="modalActive">
+    <div class="modal-content">
+      <h1>This is a Modal Header</h1>
+    </div>
+  </Modal>
+  <button @click="toggleModal" type="button">Open Modal</button>
   <div v-for="player in Players" :key="player.key" class="player">
     <router-link
       :to="{
@@ -14,8 +20,23 @@
 
 <script>
 import { db } from "../../firebase";
+import Modal from "@/components/Modal.vue";
+import { ref } from "vue";
 
 export default {
+  name: "Players",
+  components: {
+    Modal,
+  },
+  setup() {
+    const modalActive = ref(false);
+
+    const toggleModal = () => {
+      modalActive.value = !modalActive.value;
+    };
+
+    return { modalActive, toggleModal };
+  },
   data() {
     return {
       Players: [
@@ -40,6 +61,10 @@ export default {
 </script>
 
 <style>
+.player {
+  justify-content: center;
+  align-items: center;
+}
 .player h2 {
   background: #add8e6;
   padding: 20px;

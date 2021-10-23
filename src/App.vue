@@ -31,4 +31,14 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+button {
+  padding: 20px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: darkseagreen;
+  color: #2c3e50;
+  cursor: pointer;
+}
 </style>
