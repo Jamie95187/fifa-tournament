@@ -5,7 +5,9 @@
         <div v-show="modalActive" class="modal-inner">
           <i @click="close" class="fas fa-times-circle"></i>
           <slot />
-          <button class="confirmButton">Confirm</button>
+          <button @click="confirm" type="button" class="confirmButton">
+            Confirm
+          </button>
           <button @click="close" type="button">Cancel</button>
         </div>
       </transition>
@@ -20,8 +22,10 @@ export default {
     const close = () => {
       emit("close");
     };
-
-    return { close };
+    const confirm = () => {
+      emit("confirm");
+    };
+    return { close, confirm };
   },
 };
 </script>

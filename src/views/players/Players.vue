@@ -1,13 +1,8 @@
 <template>
   <h1>This is the players page</h1>
-  <Modal @close="toggleModal" :modalActive="modalActive">
+  <Modal @close="toggleModal" @confirm="addPlayer" :modalActive="modalActive">
     <div class="modal-content">
-      <input
-        class="player-name-input"
-        v-model="nameInput"
-        placeholder="Name"
-        required
-      />
+      <PlayerForm :nameValue="nameValue" />
     </div>
   </Modal>
   <button @click="toggleModal" type="button">Open Modal</button>
@@ -27,11 +22,18 @@
 import { db } from "../../firebase";
 import Modal from "@/components/Modal.vue";
 import { ref } from "vue";
+import PlayerForm from "@/components/PlayerForm.vue";
 
 export default {
   name: "Players",
   components: {
     Modal,
+    PlayerForm,
+  },
+  methods: {
+    addPlayer() {
+      console.log("confirm player");
+    },
   },
   setup() {
     const modalActive = ref(false);
