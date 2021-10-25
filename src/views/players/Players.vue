@@ -2,7 +2,7 @@
   <h1>This is the players page</h1>
   <Modal @close="toggleModal" @confirm="addPlayer" :modalActive="modalActive">
     <div class="modal-content">
-      <PlayerForm :nameValue="nameValue" />
+      <PlayerForm />
     </div>
   </Modal>
   <button @click="toggleModal" type="button">Open Modal</button>
@@ -47,9 +47,7 @@ export default {
   data() {
     return {
       Players: [
-        // { name: "Player 1", id: 1 },
-        // { name: "Player 2", id: 2 },
-        // { name: "Player 3", id: 3 },
+        // { name: "Player 1", id: 1 }
       ],
     };
   },
