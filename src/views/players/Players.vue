@@ -32,7 +32,10 @@ export default {
   },
   methods: {
     addPlayer() {
+      console.log(this.$store.state.count);
       console.log("confirm player");
+      this.$store.commit("increment");
+      console.log(this.$store.state.count);
     },
   },
   setup() {
