@@ -1,7 +1,7 @@
 <template>
   <form>
     <label>Name:</label>
-    <input required />
+    <input name="nameValue" v-bind:playerName="playerName" required />
   </form>
 </template>
 
