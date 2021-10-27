@@ -2,7 +2,10 @@
   <h1>This is the players page</h1>
   <Modal @close="toggleModal" @confirm="addPlayer" :modalActive="modalActive">
     <div class="modal-content">
-      <PlayerForm />
+      <form>
+        <label>Name:</label>
+        <input v-model="playerName" required />
+      </form>
     </div>
   </Modal>
   <button @click="toggleModal" type="button">Open Modal</button>
@@ -22,18 +25,16 @@
 import { db } from "../../firebase";
 import Modal from "@/components/Modal.vue";
 import { ref } from "vue";
-import PlayerForm from "@/components/PlayerForm.vue";
 
 export default {
   name: "Players",
   components: {
     Modal,
-    PlayerForm,
   },
   methods: {
     addPlayer() {
       console.log(this.$store.state.count);
-      console.log("confirm player");
+      console.log(this.playerName);
       this.$store.commit("increment");
       console.log(this.$store.state.count);
     },
@@ -98,5 +99,33 @@ export default {
   border: rgb(235, 195, 88);
   border-radius: 4px;
   font-size: 24px;
+}
+form {
+  max-width: 420px;
+  display: inline-block;
+  background: white;
+  text-align: left;
+  padding: 40px;
+  border-radius: 10px;
+}
+label {
+  color: #aaa;
+  display: inline-block;
+  margin: 25px 0 15px;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+input {
+  display: block;
+  padding: 10px 6px;
+  width: 100%;
+  font-size: 1em;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  color: #555;
+  outline: none;
 }
 </style>
