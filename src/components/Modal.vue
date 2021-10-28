@@ -5,7 +5,14 @@
         <div v-show="modalActive" class="modal-inner">
           <i @click="close" class="fas fa-times-circle"></i>
           <slot />
-          <button @click="confirm" type="button" class="confirmButton">
+          <button
+            @click="
+              confirm();
+              close();
+            "
+            type="button"
+            class="confirmButton"
+          >
             Confirm
           </button>
           <button @click="close" type="button">Cancel</button>

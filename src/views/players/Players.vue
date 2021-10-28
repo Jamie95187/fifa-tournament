@@ -41,8 +41,6 @@ export default {
   methods: {
     addPlayer() {
       db.collection("players").add({ name: this.playerName });
-      modalActive.value = false;
-      this.toggleModal;
     },
   },
   setup() {
