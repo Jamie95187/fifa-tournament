@@ -1,16 +1,10 @@
 import {createStore} from 'vuex'
+import { db } from "../firebase";
 
 const store = createStore({
-  state () {
-    return {
-      count: 1
-    }
-  },
-  mutations: {
-    increment (state) {
-      state.count++;
-    }
-  }
+  state () {},
+  mutations: {},
+  actions: {}
 })
 
 export default store;

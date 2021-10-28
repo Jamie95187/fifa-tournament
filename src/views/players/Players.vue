@@ -28,15 +28,21 @@ import { ref } from "vue";
 
 export default {
   name: "Players",
+  data() {
+    return {
+      player: {
+        name: "",
+      },
+    };
+  },
   components: {
     Modal,
   },
   methods: {
     addPlayer() {
-      console.log(this.$store.state.count);
-      console.log(this.playerName);
-      this.$store.commit("increment");
-      console.log(this.$store.state.count);
+      db.collection("players").add({ name: this.playerName });
+      modalActive.value = false;
+      this.toggleModal;
     },
   },
   setup() {
