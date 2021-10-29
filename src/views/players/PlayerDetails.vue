@@ -13,7 +13,7 @@ export default {
   methods: {
     deletePlayer() {
       db.collection("players").doc(this.id).delete();
-      router.push({ name: "players" });
+      router.push({ name: "Players" });
     },
   },
 };
