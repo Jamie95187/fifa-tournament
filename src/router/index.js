@@ -5,6 +5,7 @@ import NotFound from '../views/NotFound.vue'
 import Tournaments from '../views/tournaments/Tournaments.vue'
 import Players from '../views/players/Players.vue'
 import PlayerDetails from '../views/players/PlayerDetails.vue'
+import TournamentDetails from '../views/tournaments/TournamentDetails.vue'
 
 
 const routes = [
