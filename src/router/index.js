@@ -34,6 +34,12 @@ const routes = [
     component: PlayerDetails,
     props: true
   },
+  {
+    path: '/Tournament/:id',
+    name: 'TournamentDetails',
+    component: TournamentDetails,
+    props: true
+  },
   // catchall 404
   {
     path: '/:catchAll(.*)',
