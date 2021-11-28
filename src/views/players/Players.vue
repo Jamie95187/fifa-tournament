@@ -8,7 +8,7 @@
       </form>
     </div>
   </Modal>
-  <button @click="toggleModal" type="button">Open Modal</button>
+  <button @click="toggleModal" type="button">Add Player</button>
   <div v-for="player in Players" :key="player.key" class="player">
     <router-link
       :to="{
@@ -95,14 +95,6 @@ export default {
 }
 .input {
   text-align: left;
-}
-.player-name-input {
-  text-align: left;
-  padding: 24px 150px;
-  box-sizing: border-box;
-  border: rgb(235, 195, 88);
-  border-radius: 4px;
-  font-size: 24px;
 }
 form {
   max-width: 420px;
