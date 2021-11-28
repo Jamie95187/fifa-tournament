@@ -20,7 +20,7 @@
   >
     <router-link
       :to="{
-        name: 'tournmentDetails',
+        name: 'tournamentDetails',
         params: { name: tournament.name, id: tournament.key },
       }"
     >
